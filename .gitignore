@@ -1,0 +1,4 @@
+/ijust
+
+# convenience file for sourcing that includes the Slack API token
+/cmd/ijust/environment.sh
