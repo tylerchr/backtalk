@@ -1,4 +1,4 @@
-package bot
+package backtalk
 
 import (
 	"context"
@@ -20,7 +20,14 @@ func New(api *slack.Client) (*Bot, error) {
 	return b, nil
 }
 
-func (b *Bot) Start(ctx context.Context, handler Handler) error {
+// RTM provides access to the underlying real-time messaging client
+// to Slack.
+func (b *Bot) RTM() *slack.RTM {
+	return b.rtm
+}
+
+// Start starts listening.
+func (b *Bot) Start(ctx context.Context, handler Replyer) error {
 
 	go b.rtm.ManageConnection()
 
@@ -50,7 +57,7 @@ Loop:
 					break
 				}
 
-				if err := handler.Handle(b.rtm, evt); err != nil {
+				if err := handler.Reply(b.rtm, evt); err != nil {
 					return err
 				}
 
