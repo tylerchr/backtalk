@@ -9,7 +9,7 @@ import (
 
 type (
 	Replyer interface {
-		// Handle responds to an RTM event.
+		// Reply responds to an RTM event.
 		//
 		// Returning an error from a handler will kill the bot.
 		Reply(rtm *slack.RTM, evt *slack.MessageEvent) error
@@ -18,9 +18,9 @@ type (
 	ReplyFunc func(rtm *slack.RTM, evt *slack.MessageEvent) error
 )
 
-// Handle implements Replyer by invoking the ReplyFunc.
-func (hf ReplyFunc) Reply(rtm *slack.RTM, evt *slack.MessageEvent) error {
-	return hf(rtm, evt)
+// Reply implements Replyer by invoking the ReplyFunc.
+func (rf ReplyFunc) Reply(rtm *slack.RTM, evt *slack.MessageEvent) error {
+	return rf(rtm, evt)
 }
 
 // DirectFilterReplyer is a filtering Replyer that excludes all messages that
