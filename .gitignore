@@ -1,4 +1,8 @@
 /ijust
+/btmodel
+/daytime
+
+.DS_Store
 
 # convenience file for sourcing that includes the Slack API token
 /cmd/ijust/environment.sh
