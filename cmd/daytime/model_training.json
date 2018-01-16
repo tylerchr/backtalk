@@ -1,0 +1,24 @@
+{
+  "Intents": {
+    "Morning": [
+      "good morning",
+      "the sun is coming up",
+      "what is for breakfast"
+    ],
+    "Afternoon": [
+      "good afternoon",
+      "good day",
+      "it's hot outside",
+      "time for lunch"
+    ],
+    "Evening": [
+      "what is for dinner",
+      "the sun is going down"
+    ],
+    "Night": [
+      "it's cold outside",
+      "the moon is out",
+      "the look at the stars"
+    ]
+  }
+}
